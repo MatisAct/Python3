@@ -184,3 +184,59 @@ kết quả như vậy, vì hàm math truyền cho m rồi
 
 
 - **thao tác vs chuooi~**
+
+- hàm `f.strip()` loại bỏ khoẳng trắng đầu cuối
+
+- hàm `lower` chuyển thường , `upper()` hoa	, `swapcase()` swap hoa thường 
+
+- hàm `file.find('ki tự tìm')` tìm kiếm 
+
+- hàm replace('kí tự muốn đổi', 'kí tự cần đổi')
+
+### kiểu dict :**quan ngại**
+
+```
+data={100:'Hoang' ,101:'Nam' ,102:'Binh'}
+print data 
+>>>{100: 'Hoang', 101: 'Nam', 102: 'Binh'}
+
+-------------------------------------------
+truy xuất parameter:
+-------------------------------------------
+dict = {'Ten': 'Hoang', 'Tuoi': 7, 'Ten': 'Nam'};
+
+print "dict['Ten']: ", dict['Ten']
+>>>dict['Ten']:  Nam
+-----------------------------------------------
+data1={'Id':100, 'Ten':'Thanh', 'Nghenghiep':'Developer'}
+data2={'Id':101, 'Ten':'Chinh', 'Nghenghiep':'Trainer'}
+print "Id cua nhan vien dau tien la",data1['Id']
+print "Id cua nhan vien thu hai la",data2['Id']
+print "Ten cua nhan vien dau tien la:",data1['Ten']
+print "Nghe nghiep cua nhan vien thu hai la:",data2['Nghenghiep']
+Kết quả là:
+>>>>
+Id cua nhan vien dau tien la 100
+Id cua nhan vien thu hai la 101
+Ten cua nhan vien dau tien la is Thanh
+Nghe nghiep cua nhan vien thu hai la Trainer
+---------------------------------------------
+```
+- Xóa phần tử từ Dictionary trong Python: `del ten_dictionary[key]`
+
+|STT	|parameter|function|
+|-------|---------|--------|
+|1|Hàm cmp(dict1, dict2) |So sánh các phần tử của cả hai dict|
+|2	|Hàm len(dict)|Độ dài của dict. Nó sẽ là số item trong Dictionary này|
+|3|	Hàm str(dict)|Tạo ra một biểu diễn chuỗi có thể in được của một dict|
+|4	|Hàm type(variable)|Trả về kiểu của biến đã truyền. Nếu biến đã truyền là Dictionary, thì nó sẽ trả về một kiểu Dictionary|
+|5|	Phương thức dict.clear()|Xóa tất cả phần tử của dict|
+|6	|Phương thức dict.copy()|Trả về bản sao của dict|
+|7|	Phương thức fromkeys(seq,value1)/ fromkeys(seq)|Được sử dụng để tạo một Dictionary mới từ dãy seq và value1. Trong đó dãy seq tạo nên các key và tất cả các key chia sẻ các giá trị từ value1. Trong trường hợp value1 không được cung cấp thì value của các key được thiết lập là None|
+|8|	Phương thức dict.get(key, default=None)|Trả về giá trị của key đã cho. Nếu key không có mặt thì phương thức này trả về None|
+|9|	Phương thức dict.has_key(key)|Trả về true nếu key là có mặt trong Dictionary, nếu không là false|
+|10|Phương thức dict.items()|Trả về tất cả các cặp (key-value) của một Dictionary|
+|11|Phương thức dict.keys()|Trả về tất cả các key của một Dictionary|
+|12|Phương thức dict.setdefault(key, default=None)|Tương tự get(), nhưng sẽ thiết lập dict[key]=default nếu key là không tồn tại trong dict|
+|13|	Phương thức dict.update(dict2)|Được sử dụng để thêm các item của dictionary 2 vào Dictionary đầu tiên|
+14|Phương thức dict.values()|Trả về tất cả các value của một Dictionary|
