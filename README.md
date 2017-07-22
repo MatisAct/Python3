@@ -240,3 +240,116 @@ Nghe nghiep cua nhan vien thu hai la Trainer
 |12|Phương thức dict.setdefault(key, default=None)|Tương tự get(), nhưng sẽ thiết lập dict[key]=default nếu key là không tồn tại trong dict|
 |13|	Phương thức dict.update(dict2)|Được sử dụng để thêm các item của dictionary 2 vào Dictionary đầu tiên|
 14|Phương thức dict.values()|Trả về tất cả các value của một Dictionary|
+
+if __name__=='__main__':	
+
+- kiểu kiểu như là hàm này để bắt đầu trương trình trong python , trong c thì int main() gì gì ấy 	Thì khi ta viết if __name__ == '__main__': thì Python sẽ thực thi phần lệnh phía sau của lệnh if nếu file này được thực thi bằng lệnh python. Đây là một phong cách lập trình của Python mà ta nên sử dụng.
+
+### Day and time in python 
+
+```
+import time;
+
+localtime = time.asctime( time.localtime(time.time()) )
+>>>Thoi gian da duoc dinh dang la : Sun Nov 29 19:16:30 2015
+```
+
+- im ra calender:
+```
+import calender
+
+calendar.month(2014, 6)
+
+
+>>>
+  November 2015
+Mo Tu We Th Fr Sa Su
+                   1
+ 2  3  4  5  6  7  8
+ 9 10 11 12 13 14 15
+16 17 18 19 20 21 22
+23 24 25 26 27 28 29
+30
+```
+# Hướng đối tượng trong  python
+
+### Hướng thủ tục (Procedural-oriented)
+
+Hướng thủ tục biểu hiện ở việc sử dụng các hàm trong Python. Bạn có thể định nghĩa các hàm, và các hàm này có thể sử dụng tại các module khác trong chương trình Python. hình như là cái hàm import ấy
+
+### Hướng đối tượng (Object Oriented)
+
+Hướng đối tượng trong **Python** biểu hiện ở việc sử dụng lớp (class), bạn có thể định nghĩa một class, class là một nguyên mẫu (prototype) để tạo ra các đối tượng (object/instance).
+
+- tạo 1 class trong python: class lớn hơn function 
+```
+class ClassName:
+   'Mô tả ngắn về class (Không bắt buộc)'
+   # Code ...
+```
+
+- **Phương thức khởi tạo (Constructor):**
+
+
+- Phương thức khởi tạo (Constructor) là một phương thức đặc biệt của lớp (class), nó luôn có tên là __init__
+
+- Tham số đầu tiên của constructor luôn là self (Một từ khóa ám chỉ chính class đó).
+
+- Constructor được sử dụng để tạo ra một đối tượng.
+
+- Constructor gán các giá trị từ tham số vào các thuộc tính của đối tượng sẽ được tạo ra.
+
+- Bạn chỉ có thể định nghĩa nhiều nhất một phương thức khởi tạo (constructor) trong class.
+
+- Nếu class không được định nghĩa constructor, Python mặc định coi rằng nó thừa kết từ constructor của lớp cha.
+
+vd: 
+```
+#	rectangle.py
+
+# Class mô phỏng một hình chữ nhật.
+class Rectangle :# khai báo tên class
+	'''This is Rectangle class'''
+	def __init__(self, width, height): #cái củ chuối này luôn phải có 
+
+		self.width= width # chắc kiểu kiểu lấy giá trị vô cho self cái đoạn này méo hiểu thiệt @@
+		self.height = height
+	
+	def getWidth(self): # function getwidth trả về giá trị của self,width
+		return self.width
+	def getHeight(self):
+		return self.height
+	def getArea(self):
+		return self.width * self.height
+      
+ ------------------------------------------
+ from rectangle import Rectangle # lấy từ module rectangle và class Redtangle
+ 
+  
+# Tạo 2 đối tượng: r1 & r2
+ 
+from rectangle import Rectangle
+
+r1 = Rectangle(10,5)
+
+r2 = Rectangle(20,11)
+print ("r1.width = ", r1.width)
+print ("r1.height = ", r1.height)
+print ("r1.getWidth() = ", r1.getWidth())
+print ("r1.getArea() = ", r1.getArea())
+print ("-----------------")
+print ("r2.width = ", r2.width)
+print ("r2.height = ", r2.height)
+print ("r2.getWidth() = ", r2.getWidth())
+print ("r2.getArea() = ", r2.getArea())
+
+```
+- kết quả :<img src="http://o7planning.org/vi/11415/cache/images/i/7508704.png">
+
+- mô tả 2 cái trên : lúc này rectange truyền cho 2 cái r1 và r2  
+
+<img src="http://o7planning.org/vi/11415/cache/images/i/7508535.png">
+
+- cách truyền biến vô : 
+
+<img src="http://o7planning.org/vi/11415/cache/images/i/7509015.png">
