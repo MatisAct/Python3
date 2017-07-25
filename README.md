@@ -353,3 +353,47 @@ print ("r2.getArea() = ", r2.getArea())
 - cách truyền biến vô : 
 
 <img src="http://o7planning.org/vi/11415/cache/images/i/7509015.png">
+
+- python có thể cho chèn thêm 1 biến mới cho đối tượng có trước 
+
+<img src="http://o7planning.org/vi/11415/cache/images/i/7523373.png">
+
+- sau khi truyền 1 biến player1.adddresss=usa
+
+<img src="http://o7planning.org/vi/11415/cache/images/i/7524101.png">
+
+## Regular Expression trong Python
+
+-  đại loại nó hoạt động để tạo ra sự khác biệt
+```
+- vd: print("ahihi\nahihi")
+>>> ahihi
+		ahihi
+- còn khi sử dụng re:
+vd:print(r"ahihi\nahihi")
+>>> ahihi\nahihi
+
+- nó giúp in ra các kí tự đặc biệt mà khỏi mất thời gian
+
+```
+- hoặc ví dụ 1 đoạn văn bản dài cả ngàn trang , có thể tìm kiếm các kí tự cụ thể , các số ...
+```
+import re
+dich=open ('alphabet.txt','r').read()
+print ("".join(re.findall(r"\d", dich))) # tìm các kí tự là số trong file
+print ("".join(re.findall("[A-Za-z]", dich))) #tìm kí tự là string trong file 	
+print ("".join(re.findall(r"[A-Za-z]{9,16}", dich))) #tìm kí tự dài từ 9-16,\w kí tự bất kì cặp số {số kí tự ít nhất, kết thúc}
+print ("".join(re.findall(r"[A-Z]\w{1,}\s", dich))) #tìm kí tự là string trong file bắt đầu bằng từ in hoa,\s là kết thúc = space
+```
+
+- now , làm sao để có được statement trên: + re.findall để thêm 1 điều kiện , vd, nháy đơn hoặc nháy kép
+<img src="https://image.prntscr.com/image/ciOT8Pj9SRKthq3U4ILuEQ.png">
+
+|statement|cách dùng|
+|---------|---------|
+|\d|tim các kí hiệu số|
+|{bắt đầu mấy kí tự, end}|việc tìm kiếm bn kí tự|
+|\w |tìm các character|
+https://www.youtube.com/watch?v=-p4U1jzqfhU&t=528s
+
+- .*? lấy tất cả , vd ` re.findall(r'<title>(.*?)</title>') >>> lấy tất cả trong cụm title
