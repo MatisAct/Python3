@@ -1,5 +1,5 @@
 # Lập trình Socket
-
+invalid syntax book
 ### Lập trình socket là gì ?
 - Lập trình socket là cách lập trình cho phép chúng ta kết nối các máy tính truyền tải và nhận dữ liệu từ máy tính thông qua mạng .
 ### Có 2 loại socket gồm : TCP/UDP
