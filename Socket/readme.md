@@ -92,3 +92,48 @@ Kết thúc
 Cuộc nói chuyện nào cũng có hồi kết.
 
 Hàm close() được sử dụng ở đây.
+
+
+
+hey i need you read PythonNetBinder !now  
+
+```
+server.py 
+<-------------->
+import socket
+ 
+server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+/*Đầu tiên chúng ta tạo một đối tượng socket, tham số AF_INET cho biết chúng ta sử dụng IP v4, SOCK_TREAM là dùng giao thức TCP. Ngoài ra còn một số giá trị khác như AF_INET6 là dùng IP v6, AF_UNIX là chỉ kết nối các ứng dụng trong một máy (không dùng mạng), SOCK_DGRAM là dùng giao thức UDP.*/
+
+print ("Starting server on port 10000")
+server.bind((socket.gethostname(), 10000))
+#Phương thức bind() liên kết tới địa chỉ gethostname() trên cổng 10000.
+server.listen(1)
+Phương thức listen() cho python biết socket này là một server, tham số của phương thức này là số lượng các kết nối có thể có trong hàng đợi, ít nhất là 0 và cao nhất là do hệ điều hành chỉ định (thường là 5). Phương thức accept() sẽ đưa server vào trạng thái chờ đợi cho đến khi có kết nối thì sẽ trả về một tuple gồm có một socket khác dùng để truyền dữ liệu qua lại với client và một tuple nữa bao gồm địa chỉ ip và port của ứng dụng client.
+
+while True:
+    conn, client = server.accept()
+    try:
+       print ("Connection from", client)
+  
+    while True:
+        data = conn.recv(1024)
+        print ("Receive from client:", data)
+        if data:
+            print ("Response to client")
+            conn.sendall(data) #ếu có dữ liệu gửi sang thì chúng ta gửi trả lời về client thông qua phương thức sendall()
+        else:
+            print ("No data received")
+            break
+    finally:
+        conn.close()
+```
+
+
+• send() returns actual bytes sent
+• recv() length is only a maximum limit
+
+>>> s.setsockopt(socket.SOL_SOCKET,
+... socket.SO_REUSEADDR, 1)
+>>> s.bind(("",9000))
