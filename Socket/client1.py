@@ -1,18 +1,12 @@
+#client.py
 import socket
-
-
-s = socket.socket()
-host = socket.gethostname()
-port = 1234
-s.bind((host, port))
-
-s.listen(5)
-
-while True:
+for x in xrange(4):
 	
-    c, addr = s.accept() 
-    print 'Got connection from',addr
-    a=raw_input('your messenger send to client:->')
-    c.send(a)  
+	s = socket.socket()
 
-    c.close()
+	host = socket.gethostname()
+	port = 1234
+
+	s.connect((host, port)) 
+	print s.recv(1024) 
+	
