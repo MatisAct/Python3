@@ -1,10 +1,18 @@
-#client.py
 import socket
 
-s = socket.socket()
 
+s = socket.socket()
 host = socket.gethostname()
 port = 1234
+s.bind((host, port))
 
-s.connect((host, port)) 
-print s.recv(1024) # nhận size trả về kích thước 1mb
+s.listen(5)
+
+while True:
+	
+    c, addr = s.accept() 
+    print 'Got connection from',addr
+    a=raw_input('your messenger send to client:->')
+    c.send(a)  
+
+    c.close()
