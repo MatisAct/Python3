@@ -19,4 +19,6 @@ while True:
 		print ('client>',data)
 		r=input("you send:>")
 		client.send(r.encode())	
+	if r=='bye':
+		sys.exit(0)
 		 
