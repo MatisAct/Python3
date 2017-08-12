@@ -1,5 +1,6 @@
 
 import socket
+import sys
 
 s = socket.socket()
 host ="127.0.0.1"
@@ -13,5 +14,7 @@ for x in range(1000):
         
         data = s.recv(1024).decode()
         print ('admin>',data)
+    if mess=='bye':
+        sys.exit(0)
         
 s.close ()
