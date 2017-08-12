@@ -1,19 +1,18 @@
-
 import socket
 
-s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-host ="192.168.1.3"
-port =8000
-s.connect((host,port))
+serversocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+host = "127.0.0.1"
+port = 8000
+print (host)
+print (port)
+serversocket.bind((host, port))
 
-def ts(str):
-   s.send('e'.encode()) 
-   data = ''
-   data = s.recv(1024).decode()
-   print (data)
-
-while 2:
-   r = input('enter')
-   ts(s)
-
-s.close ()
+serversocket.listen(5)
+print ('server started and listening')
+while 1:
+    (clientsocket, addr) = serversocket.accept()
+    print ("da ket noi voi :!",addr)
+    data = clientsocket.recv(1024).decode()
+    print (data)
+    r=input("typing:")
+    clientsocket.send(r.encode())
