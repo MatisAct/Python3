@@ -137,3 +137,10 @@ while True:
 >>> s.setsockopt(socket.SOL_SOCKET,
 ... socket.SO_REUSEADDR, 1)
 >>> s.bind(("",9000))
+
+<img src="https://image.prntscr.com/image/TLStA1fGQL6PPV1Vcrc8zQ.png">
+
+## Cơ chế gọi hàm trong lập trình Socket
+### TCP
+
+<img src='https://loiuit.files.wordpress.com/2011/05/tcp2.jpg?w=620'>
