@@ -1,5 +1,4 @@
 
-
 import socket
 s= socket.socket()
 host = socket.gethostname()
@@ -12,7 +11,6 @@ for x in range(4):
 		
 	    c, addr = s.accept() 
 	    print addr,':'
-
-	    
-	    a=raw_input('you:->')
-
+		a=raw_input('you:->')
+		c.send(a)
+c.close()		
