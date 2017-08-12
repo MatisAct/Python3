@@ -7,10 +7,12 @@ port =8000
 s.connect((host,port))
 
 while True:
-    s.send('wellcome to 127 connect SpiderHost'.encode()) 
+    mess=input('nhap tin nhan:')
+
+    s.send(mess.encode()) 
     
     data = s.recv(1024).decode()
-    print (data)
+    print ('admin>',data)
 
 
 s.close ()
